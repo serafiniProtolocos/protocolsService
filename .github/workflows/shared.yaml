@@ -1,0 +1,22 @@
+name: shared update
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: install build dependencies
+      run: |
+        echo 'not implemented yet'
+    - name: deploy
+      run: |
+        apt install make
+        make deploy
+      working-directory: shared
